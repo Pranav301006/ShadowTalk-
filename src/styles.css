@@ -1,0 +1,522 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  background-color: #050509;
+  color: #f5f5f7;
+}
+
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at top, #151520 0, #050509 55%, #000 100%);
+}
+
+.app-root--shadow {
+  filter: contrast(1.05) brightness(0.9);
+}
+
+.app-header {
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #252536;
+  background: linear-gradient(to right, #050509, #090918);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  color: #b3b3c6;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.emotion-room-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(15, 15, 30, 0.8);
+  border: 1px solid #33334a;
+}
+
+.emotion-room-label {
+  font-size: 0.75rem;
+  color: #b3b3c6;
+}
+
+.emotion-room-badge {
+  font-size: 0.8rem;
+  color: #7dd3fc;
+  font-weight: 500;
+}
+
+.anon-pill {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(15, 15, 30, 0.8);
+  border: 1px solid #33334a;
+  color: #d6d6e6;
+}
+
+.anon-pill span {
+  color: #7dd3fc;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1.3fr;
+  gap: 1.25rem;
+  padding: 1.25rem 2rem 2rem;
+  flex: 1;
+}
+
+.layout--hidden {
+  filter: blur(14px);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card {
+  background: rgba(10, 10, 20, 0.96);
+  border-radius: 0.8rem;
+  padding: 1rem;
+  border: 1px solid #252536;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.card-info p {
+  font-size: 0.9rem;
+  color: #c3c3d6;
+}
+
+.info-list {
+  font-size: 0.85rem;
+  padding-left: 1.2rem;
+  margin: 0.5rem 0 0.2rem;
+  color: #d6d6e6;
+}
+
+.info-list li + li {
+  margin-top: 0.15rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.field-label {
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.input-textarea {
+  resize: vertical;
+  min-height: 70px;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #33334a;
+  background: #05050b;
+  color: #f5f5f7;
+  font-size: 0.9rem;
+}
+
+.input-textarea:focus {
+  outline: 1px solid #38bdf8;
+  border-color: #38bdf8;
+}
+
+.helper-text {
+  font-size: 0.8rem;
+  color: #b3b3c6;
+}
+
+.emotion-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.emotion-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.6rem 0.5rem;
+  border-radius: 0.6rem;
+  border: 1px solid #33334a;
+  background: rgba(15, 15, 30, 0.9);
+  color: #d6d6e6;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.8rem;
+}
+
+.emotion-btn:hover {
+  border-color: #38bdf8;
+  background: rgba(8, 47, 73, 0.5);
+  transform: translateY(-1px);
+}
+
+.emotion-btn--active {
+  border-color: #38bdf8;
+  background: rgba(8, 47, 73, 0.7);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+}
+
+.emotion-emoji {
+  font-size: 1.4rem;
+}
+
+.emotion-label {
+  font-size: 0.75rem;
+}
+
+.emotion-badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(17, 24, 39, 0.8);
+  color: #e5e7eb;
+  white-space: nowrap;
+}
+
+.selected-dilemma-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+  gap: 0.5rem;
+}
+
+.emotion-mismatch-warning {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.5rem;
+  background: rgba(153, 27, 27, 0.2);
+  border: 1px solid rgba(185, 28, 28, 0.4);
+  color: #fca5a5;
+  font-size: 0.8rem;
+}
+
+.emotion-mismatch-warning strong {
+  color: #fecaca;
+}
+
+.card-emotion-rooms {
+  margin-bottom: 0.5rem;
+}
+
+.emotion-rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.emotion-room-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.8rem 0.6rem;
+  border-radius: 0.6rem;
+  border: 1px solid #33334a;
+  background: rgba(15, 15, 30, 0.9);
+  color: #d6d6e6;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+}
+
+.emotion-room-card:hover {
+  border-color: #38bdf8;
+  background: rgba(8, 47, 73, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.emotion-room-emoji {
+  font-size: 1.8rem;
+}
+
+.emotion-room-name {
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.emotion-room-count {
+  font-size: 0.7rem;
+  color: #9ca3af;
+}
+
+.dilemma-header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.dilemma-emotion-tag {
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.form-footer,
+.reply-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.char-count {
+  font-size: 0.78rem;
+  color: #a5b4fc;
+}
+
+.btn {
+  border-radius: 999px;
+  border: none;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  background: #1d4ed8;
+  color: #e5e7eb;
+  transition: background 0.15s ease, transform 0.08s ease;
+}
+
+.btn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: #1d4ed8;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #374151;
+}
+
+.btn-outline:hover {
+  background: #111827;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #9ca3af;
+}
+
+.btn-ghost:hover {
+  background: #111827;
+  border-color: #27272f;
+}
+
+.btn-panic {
+  background: #991b1b;
+}
+
+.btn-panic:hover {
+  background: #b91c1c;
+}
+
+.btn-small {
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+}
+
+.card-replies {
+  margin-top: 0.5rem;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(17, 24, 39, 0.8);
+  color: #e5e7eb;
+}
+
+.selected-dilemma {
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: 0.6rem;
+  border: 1px dashed #374151;
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.selected-dilemma h3 {
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+}
+
+.selected-dilemma p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.reply-form {
+  margin-top: 0.8rem;
+}
+
+.reply-list {
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.reply-item {
+  padding: 0.55rem 0.65rem;
+  border-radius: 0.6rem;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid #1f2937;
+  font-size: 0.9rem;
+}
+
+.reply-meta {
+  margin-top: 0.35rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.reply-id {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+}
+
+.dilemma-list {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.dilemma-item {
+  padding: 0.5rem 0.55rem;
+  border-radius: 0.6rem;
+  background: rgba(15, 15, 30, 0.9);
+  border: 1px solid #202033;
+  cursor: pointer;
+}
+
+.dilemma-item--active {
+  border-color: #38bdf8;
+  background: rgba(8, 47, 73, 0.7);
+}
+
+.dilemma-text {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.dilemma-meta {
+  margin-top: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: #9ca3af;
+}
+
+.mini-id {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+}
+
+.mini-tokens {
+  color: #facc15;
+}
+
+.empty-text {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.app-footer {
+  padding: 0.7rem 2rem 1rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+  border-top: 1px solid #111827;
+  text-align: center;
+  background: #020308;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .header-controls {
+    flex-wrap: wrap;
+  }
+}
+
+
